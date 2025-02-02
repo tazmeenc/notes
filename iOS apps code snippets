@@ -1,0 +1,38 @@
+//
+//  ContentView.swift
+//  iOSApp1
+//
+//  Created by DevUser on 2/2/25.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Form {
+            
+            ForEach(2..<11) {
+                let table = $0
+                Section {
+                    Text("\(table) Times Table")
+                        .frame(width: 300, height: 30, alignment: .center)
+                        .background(Color.blue.opacity(0.3))
+                }
+
+                ForEach(1..<11) {
+                    Text("\(table) x \($0) = \(table*$0)")
+                        .frame(width: 300, height: 30, alignment: .center)
+                        .background(Color.pink.opacity(0.3))
+                }
+            }
+            
+            
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
